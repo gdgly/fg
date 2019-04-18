@@ -1,0 +1,105 @@
+; Code Composer Project File, Version 2.0 (do not modify or remove this line)
+
+[Project Settings]
+ProjectDir="C:\dsp_project\EnergyStg\EnergyStg\"
+ProjectType=Executable
+CPUFamily=TMS320C28XX
+Tool="Compiler"
+Tool="CustomBuilder"
+Tool="DspBiosBuilder"
+Tool="Linker"
+Config="Debug"
+Config="Release"
+
+[Source Files]
+Source="..\DSP2833x_common\source\DSP2833x_Adc.c"
+Source="..\DSP2833x_common\source\DSP2833x_ADC_cal.asm"
+Source="..\DSP2833x_common\source\DSP2833x_CodeStartBranch.asm"
+Source="..\DSP2833x_common\source\DSP2833x_CpuTimers.c"
+Source="..\DSP2833x_common\source\DSP2833x_CSMPasswords.asm"
+Source="..\DSP2833x_common\source\DSP2833x_DBGIER.asm"
+Source="..\DSP2833x_common\source\DSP2833x_DefaultIsr.c"
+Source="..\DSP2833x_common\source\DSP2833x_DisInt.asm"
+Source="..\DSP2833x_common\source\DSP2833x_ECan.c"
+Source="..\DSP2833x_common\source\DSP2833x_EPwm.c"
+Source="..\DSP2833x_common\source\DSP2833x_Gpio.c"
+Source="..\DSP2833x_common\source\DSP2833x_MemCopy.c"
+Source="..\DSP2833x_common\source\DSP2833x_PieCtrl.c"
+Source="..\DSP2833x_common\source\DSP2833x_PieVect.c"
+Source="..\DSP2833x_common\source\DSP2833x_Sci.c"
+Source="..\DSP2833x_common\source\DSP2833x_SysCtrl.c"
+Source="..\DSP2833x_common\source\DSP2833x_usDelay.asm"
+Source="..\DSP2833x_common\source\DSP2833x_Xintf.c"
+Source="..\DSP2833x_headers\source\DSP2833x_GlobalVariableDefs.c"
+Source="code\base_clk.c"
+Source="code\base_except.c"
+Source="code\base_pid.c"
+Source="code\base_speed.c"
+Source="code\base_transfer.c"
+Source="code\base_transform.c"
+Source="code\burntest.c"
+Source="code\charge.c"
+Source="code\chargebms.c"
+Source="code\cmm.c"
+Source="code\cmm_table.c"
+Source="code\cunit.c"
+Source="code\drv_ad.c"
+Source="code\drv_ad_inner.c"
+Source="code\drv_can.c"
+Source="code\drv_cpld.c"
+Source="code\drv_dog.c"
+Source="code\drv_ethernet.c"
+Source="code\drv_io.c"
+Source="code\drv_isr.c"
+Source="code\drv_pwm.c"
+Source="code\drv_sci.c"
+Source="code\drv_timer.c"
+Source="code\fsm_chg.c"
+Source="code\fsm_dchg.c"
+Source="code\led.c"
+Source="code\pll.c"
+Source="code\power.c"
+Source="code\precharge.c"
+Source="code\protect.c"
+Source="code\relay.c"
+Source="code\rms.c"
+Source="code\svpwm.c"
+Source="code\test.c"
+Source="code\Tlimit.c"
+Source="code\vc_ssc.c"
+Source="code\zisr_fs.c"
+Source="code\zmain.c"
+Source="code\DSP2833x_Headers_nonBIOS.cmd"
+Source="code\WLG_28335_RAM_lnk.cmd"
+Source="code\WLG_F28335.cmd"
+
+["Compiler" Settings: "Debug"]
+Options=-g -pdr -pdsw225 -fr"..\Debug" -fs".\Debug" -i"..\..\DSP2833x_headers\include" -i"..\..\DSP2833x_common\include" -d"_DEBUG" -d"LARGE_MODEL" -ml -mt -v28 --float_support=fpu32
+
+["Compiler" Settings: "Release"]
+Options=-pdsw225 -o3 -fr"$(Proj_dir)\Release" -d"LARGE_MODEL" -ml -v28
+
+["Linker" Settings: "Debug"]
+Options=-c -ecode_start -m".\Debug\EnergyStg.map" -o".\Debug\EnergyStg.out" -stack0x400 -w -x -i"..\..\DSP2833x_headers\include" -l"rts2800_fpu32.lib"
+
+["Linker" Settings: "Release"]
+Options=-c -m".\Release\EnergyStg.map" -o".\Release\EnergyStg.out" -w -x
+
+["code\DSP2833x_Headers_nonBIOS.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["code\DSP2833x_Headers_nonBIOS.cmd" Settings: "Release"]
+LinkOrder=1
+
+["code\WLG_28335_RAM_lnk.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["code\WLG_28335_RAM_lnk.cmd" Settings: "Release"]
+LinkOrder=1
+
+["code\WLG_F28335.cmd" Settings: "Debug"]
+LinkOrder=1
+
+["code\WLG_F28335.cmd" Settings: "Release"]
+LinkOrder=1
+
